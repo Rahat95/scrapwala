@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrapwala.com | Industrial Metal Scrap Solutions Mumbai</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --industrial-grey: #2f3640;
+            --safety-orange: #ff793f;
+            --clean-white: #ffffff;
+            --light-grey: #f5f6fa;
+            --dark-steel: #1e272e;
+            --success-green: #2ecc71;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { color: var(--industrial-grey); line-height: 1.6; background-color: var(--clean-white); }
+
+        /* Navigation */
+        nav {
+            background: var(--dark-steel); color: white; padding: 1.2rem 8%;
+            display: flex; justify-content: space-between; align-items: center;
+            position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .logo { font-size: 1.6rem; font-weight: 900; color: var(--safety-orange); letter-spacing: -1px; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 25px; font-size: 0.85rem; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
+        .nav-links a:hover { color: var(--safety-orange); }
+
+         .about-section {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            padding: 100px 10%;
+        }
+        .about-content { flex: 1; }
+        .about-image { flex: 1; background: var(--light-grey); padding: 20px; border-radius: 10px; }
+        .about-image img { width: 100%; border-radius: 5px; filter: grayscale(100%); transition: 0.5s; }
+        .about-image img:hover { filter: grayscale(0%); }
+
+        /* Sections */
+        .section-padding { padding: 80px 10%; }
+        .bg-light { background-color: var(--light-grey); }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&q=80&w=1600');
+            background-size: cover; background-position: center; height: 85vh;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 10%;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; line-height: 1.1; }
+        .hero span { color: var(--safety-orange); }
+
+        /* Compliance Bar */
+        .compliance-bar { background: #e1e4e8; padding: 20px 10%; display: flex; justify-content: center; gap: 40px; align-items: center; border-bottom: 2px solid #ccc; }
+        .compliance-bar i { color: var(--industrial-grey); margin-right: 8px; }
+        .compliance-label { font-weight: bold; font-size: 0.9rem; color: #555; }
+
+        /* Stats Bar */
+        .stats-bar { background: var(--industrial-grey); display: flex; justify-content: space-around; padding: 40px 10%; color: white; border-bottom: 4px solid var(--safety-orange); }
+        .stat-item h3 { color: var(--safety-orange); font-size: 2rem; }
+
+        /* FAQ Section */
+        .faq-container { max-width: 800px; margin: 40px auto 0; text-align: left; }
+        details { background: white; padding: 15px 20px; margin-bottom: 10px; border-radius: 5px; cursor: pointer; border: 1px solid #ddd; }
+        summary { font-weight: bold; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: '+'; color: var(--safety-orange); font-size: 1.5rem; }
+        details[open] summary::after { content: '-'; }
+
+        /* Lead Form */
+        .contact-flex { display: flex; gap: 50px; margin-top: 40px; }
+        .contact-form { flex: 1.5; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .form-group input, .form-group textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; }
+        
+        /* Footer */
+        footer { background: var(--dark-steel); color: #bdc3c7; padding: 80px 10% 20px; }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 50px; }
+        .footer-col h4 { color: white; margin-bottom: 25px; text-transform: uppercase; }
+
+        .btn { padding: 15px 35px; border-radius: 3px; font-weight: bold; text-decoration: none; transition: 0.4s; display: inline-block; text-transform: uppercase; cursor: pointer; border: none; }
+        .btn-orange { background: var(--safety-orange); color: white; }
+        .btn-orange:hover { background: #e66a35; }
+         /* Process Section (The "How It Works") */
+        .process { background: var(--light-grey); padding: 80px 10%; text-align: center; }
+        .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; }
+        .step { position: relative; }
+        .step i { font-size: 2.5rem; color: var(--industrial-grey); margin-bottom: 20px; }
+        .step h4 { margin-bottom: 10px; color: var(--dark-steel); }
+        /* Testimonials */
+        .testimonials { padding: 80px 10%; background: var(--clean-white); }
+        .testimonial-card {
+            background: white;
+            border: 1px solid #eee;
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--safety-orange);
+        }
+        .stars { color: #f1c40f; margin-bottom: 10px; }
+
+
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 35px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); z-index: 1000; }
+
+        @media (max-width: 768px) { .footer-grid, .contact-flex { grid-template-columns: 1fr; flex-direction: column; } .hero h1 { font-size: 2.2rem; }  .about-section { flex-direction: column; text-align: center; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo"><i class="fas fa-recycle"></i> SCRAPWALA</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#faq">FAQ</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/91XXXXXXXXXX" class="btn-orange btn" style="padding: 8px 20px;">Pickup Now</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Mumbai's <span>Top-Rated</span> Industrial Metal Scrap Buyers</h1>
+        <p>Expert collection of VMC chips, CNC turnings, and construction steel. Certified weights and instant settlements.</p>
+        <div style="margin-top: 20px;">
+            <a href="#contact" class="btn btn-orange">Get A Free Quote</a>
+        </div>
+    </header>
+
+    <section class="compliance-bar">
+        <div class="compliance-label"><i class="fas fa-check-circle"></i> MPCB COMPLIANT</div>
+        <div class="compliance-label"><i class="fas fa-file-contract"></i> ISO 9001 CERTIFIED</div>
+        <div class="compliance-label"><i class="fas fa-balance-scale"></i> VERIFIED WEIGHBRIDGE</div>
+    </section>
+
+     <div class="stats-bar">
+        <div class="stat-item"><h3>15+</h3><p>Years Experience</p></div>
+        <div class="stat-item"><h3>500+</h3><p>Factories Served</p></div>
+        <div class="stat-item"><h3>100%</h3><p>Digital Weighing</p></div>
+        <div class="stat-item"><h3>24hr</h3><p>Pickup Turnaround</p></div>
+    </div>
+
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h4 style="color: var(--safety-orange); text-transform: uppercase;">Trusted Since 2009</h4>
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">The Backbone of Mumbai's Industrial Recycling</h2>
+            <p>Scrapwala.com was founded on a single principle: <strong>Honesty in Weight.</strong> In an industry plagued by manual errors and lack of transparency, we bring digital precision to every transaction.</p>
+            <br>
+            <p>Operating across major industrial zones, we specialize in overcoming the unique logistical challenges of high-traffic manufacturing hubs. Whether navigating tight factory lanes or managing heavy-load logistics in busy warehouse districts, our specialized fleet is equipped for timely pickups and MPCB-compliant disposal. We ensure your industrial waste management is seamless, legal, and maximizes the recovery value of your metal assets.</p>
+        </div>
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1590579491624-f98f36d4c763?auto=format&fit=crop&q=80&w=800" alt="Industrial Scrap Yard">
+        </div>
+    </section>
+    <section class="process" id="process">
+        <h2>Transparent Collection Process</h2>
+        <div class="process-grid">
+            <div class="step">
+                <i class="fab fa-whatsapp"></i>
+                <h4>1. Fast Quote</h4>
+                <p>Send photos of your scrap via WhatsApp for an instant estimate based on LME rates.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-truck-moving"></i>
+                <h4>2. Scheduled Pickup</h4>
+                <p>Our specialized trucks arrive at your factory/site within 24 hours of booking.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-weight"></i>
+                <h4>3. Digital Weighing</h4>
+                <p>On-site weighing using calibrated scales or verified local weighbridges.</p>
+            </div>
+            <div class="step">
+                <i class="fas fa-money-bill-wave"></i>
+                <h4>4. Instant Payment</h4>
+                <p>Immediate bank transfer or cash settlement before the material leaves your premises.</p>
+            </div>
+        </div>
+    </section>
+    <section class="testimonials" id="testimonials">
+        <h2 style="text-align: center; margin-bottom: 40px;">What Our Clients Say</h2>
+        <div class="grid" style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <div class="testimonial-card" style="flex: 1; min-width: 300px;">
+                <div class="stars">★★★★★</div>
+                <p>"Best CNC chip rates in Mumbai's MIDC. Their collection team is professional and uses digital scales. Very transparent."</p>
+                <h4 style="margin-top: 15px;">— Workshop Manager, Precision Engineering</h4>
+            </div>
+            <div class="testimonial-card" style="flex: 1; min-width: 300px;">
+                <div class="stars">★★★★★</div>
+                <p>"Handling site scrap is usually a headache, but Scrapwala cleared 5 tonnes of TMT waste from our Chembur site in 4 hours."</p>
+                <h4 style="margin-top: 15px;">— Site Supervisor, Lodha Projects</h4>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding" id="faq">
+        <h2 style="text-align: center;">Scrap Collection <span class="accent-text">FAQs</span></h2>
+        <div class="faq-container">
+            <details>
+                <summary>How can I get the best scrap metal price per kg in Mumbai?</summary>
+                <p style="padding-top: 15px;">Prices vary daily based on the LME (London Metal Exchange). We offer rates based on current market transparency. For bulk quantities (above 1 ton), we provide premium pricing.</p>
+            </details>
+            <details>
+                <summary>Do you provide weighbridge slips for industrial scrap?</summary>
+                <p style="padding-top: 15px;">Yes. For heavy loads, we use <strong>verified 100-ton weighbridges</strong> and provide digital slips to ensure 100% honesty in weight.</p>
+            </details>
+            <details>
+                <summary>What is MPCB Form 10, and do you provide it?</summary>
+                <p style="padding-top: 15px;">Form 10 is a manifest for hazardous waste. As a compliant buyer, we provide necessary documentation for factory clearances to meet environmental norms.</p>
+            </details>
+        </div>
+    </section>
+    <section class="section-padding bg-light" id="locations">
+        <h2 style="text-align: center;">Service Areas in <span class="accent-text">MMR Region</span></h2>
+        <p style="text-align: center;">Fastest scrap pickup services in the following industrial clusters:</p>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 30px;">
+            <div style="padding: 15px; border-bottom: 2px solid var(--safety-orange);">
+                <strong>Navi Mumbai:</strong><br>Rabale MIDC, Taloja, Mahape, Pawne, Airoli.
+            </div>
+            <div style="padding: 15px; border-bottom: 2px solid var(--safety-orange);">
+                <strong>Mumbai Western:</strong><br>Virar to Mumbai (Andheri East, Borivali, Goregaon, Malad, Miraroad, Bhayander, mumbai centeral) All Western region
+            </div>
+            <div style="padding: 15px; border-bottom: 2px solid var(--safety-orange);">
+                <strong>Mumbai Central:</strong><br>Kanjurmarg, Vikhroli, Kurla, Sion.
+            </div>
+            <div style="padding: 15px; border-bottom: 2px solid var(--safety-orange);">
+                <strong>Thane & Beyond:</strong><br>Wagle Estate, Bhiwandi, Kalyan, Ambernath.
+            </div>
+        </div>
+    </section>
+    <section class="section-padding" id="about">
+        <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h2>Trusted <span class="accent-text">Scrap Dealer</span> Serving Mumbai Since 2009</h2>
+                <p>Scrapwala.com is a premier <strong>metal recycling company</strong> based in Mumbai. We specialize in the purchase and processing of industrial waste, focusing on transparency and high-value recovery.</p>
+                <p style="margin-top: 15px;">Whether you are looking for <strong>CNC scrap buyers in Mumbai</strong> or <strong>construction steel buyers in Mumbai</strong>, our team provides efficient, eco-friendly logistics to clear your warehouse space and maximize your ROI.</p>
+                <div style="margin-top: 20px; display: flex; gap: 20px;">
+                    <div><i class="fas fa-truck-loading accent-text"></i> 500+ Pickups/Mo</div>
+                    <div><i class="fas fa-users accent-text"></i> 1000+ MSME Clients</div>
+                </div>
+            </div>
+            <div style="flex: 1; min-width: 300px;">
+                <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=800" alt="Industrial Metal Scrap Yard Mumbai" style="width:100%; border-radius:10px; box-shadow: 20px 20px 0 var(--safety-orange);">
+            </div>
+        </div>
+    </section>
+    <section class="section-padding bg-light" id="services">
+        <h2 style="text-align: center;">Industrial <span class="accent-text">Waste Management</span> Solutions</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-cogs"></i>
+                <h3>VMC & CNC Chips</h3>
+                <p>Specialized removal of <strong>metal shavings, boring, and engineering chips</strong>. We provide leak-proof bins for oily waste collection.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-hard-hat"></i>
+                <h3>Site Steel & TMT Bars</h3>
+                <p>Bulk collection of <strong>construction iron scrap</strong>. We dismantle structural steel, beams, and TMT rods from project sites across Mumbai.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-dumpster-fire"></i>
+                <h3>Plant Decommissioning</h3>
+                <p>Professional <strong>factory dismantling services</strong>. We handle the removal of heavy machinery, boilers, and entire production lines.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="section-padding" id="contact">
+        <div class="contact-flex">
+            <div style="flex: 1;">
+                <h2 style="font-size: 2.5rem;">Ready to clear your <span>Storage Space?</span></h2>
+                <p style="margin: 20px 0;">Fill out the form for a formal corporate proposal, or use the WhatsApp button for an instant price check on today's rates.</p>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 15px;"><i class="fas fa-clock" style="color: var(--safety-orange);"></i> Response within 30 minutes</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-truck" style="color: var(--safety-orange);"></i> Same-day pickup availability</li>
+                    <li style="margin-bottom: 15px;"><i class="fas fa-shield-alt" style="color: var(--safety-orange);"></i> Secure & Transparent process</li>
+                </ul>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label>Company Name</label>
+                        <input type="text" placeholder="e.g. Precision Engineering Ltd">
+                    </div>
+                    <div class="form-group">
+                        <label>Type of Material</label>
+                        <select style="width: 100%; padding: 12px; border: 1px solid #ddd;">
+                            <option>VMC / CNC Metal Chips</option>
+                            <option>Construction Site Steel</option>
+                            <option>Factory Dismantling</option>
+                            <option>Other / Mixed Scrap</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Location in Mumbai</label>
+                        <input type="text" placeholder="e.g. Rabale MIDC">
+                    </div>
+                    <div class="form-group">
+                        <label>Estimated Weight (kg/tons)</label>
+                        <input type="text" placeholder="e.g. 2 Tons">
+                    </div>
+                    <button type="button" class="btn btn-orange" style="width: 100%;">Submit Quote Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 20px;">SCRAPWALA.COM</div>
+                <p>Ensuring Mumbai's industrial growth through responsible recycling and maximum scrap value recovery since 2009.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Sitemap</h4>
+                <ul style="list-style: none;">
+                    <li><a href="#about" style="color: #bdc3c7; text-decoration: none;">About</a></li>
+                    <li><a href="#services" style="color: #bdc3c7; text-decoration: none;">Services</a></li>
+                    <li><a href="#faq" style="color: #bdc3c7; text-decoration: none;">FAQs</a></li>
+                    <li><a href="#contact" style="color: #bdc3c7; text-decoration: none;">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Admin</h4>
+                <ul style="list-style: none;">
+                    <li><a href="#" style="color: #bdc3c7; text-decoration: none;">Partner Login</a></li>
+                    <li><a href="#" style="color: #bdc3c7; text-decoration: none;">Privacy Policy</a></li>
+                    <li><a href="#" style="color: #bdc3c7; text-decoration: none;">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p>Mumbai</p>
+                <p>Tel: +91 9820953268</p>
+                <p>Email: rprp786911@gmail.com</p>
+            </div>
+        </div>
+        <div style="border-top: 1px solid #444; padding-top: 20px; text-align: center; font-size: 0.8rem;">
+            <p>&copy; 2026 Scrapwala Metal Solutions Mumbai. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/919820953268" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

@@ -1,4 +1,6 @@
+# robots.txt for Scrapwala (https://scrapwala.vercel.app)
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://scrapwala.vercel.app/sitemap.xml

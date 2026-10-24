@@ -1,0 +1,18 @@
+# Scrapwala - Industrial Metal Scrap Solutions Mumbai
+
+> Scrapwala (scrapwala.vercel.app) is Mumbai's premier B2B industrial metal scrap buyer and recycling partner, serving MIDCs, construction sites, and manufacturing plants across the Mumbai Metropolitan Region (MMR) since 2009.
+
+## Core Offerings
+- **VMC & CNC Chips Removal**: Collection of metal shavings, borings, and oily engineering chips with leak-proof bins.
+- **Construction Site Steel**: Bulk pickup and dismantling of structural steel, beams, rebar, and TMT rods.
+- **Plant Decommissioning & Machinery**: Full factory clearance, dismantling of heavy machinery, boilers, and production lines.
+- **Industrial Metal Scrap Buying**: Ferrous and non-ferrous metals purchased with LME-linked pricing.
+
+## Key Technical Specifications & Compliance
+- **Compliance**: MPCB (Maharashtra Pollution Control Board) compliant, MPCB Form 10 manifests for hazardous/industrial waste clearances, ISO 9001 certified.
+- **Weighing**: 100% digital weighing with verified 100-ton weighbridges and digital slips ("Honesty in Weight").
+- **Turnaround**: 24-hour pickup turnaround, fast quotes via WhatsApp, same-day pickup availability.
+
+## Documentation & Details
+- [Full LLM Details](https://scrapwala.vercel.app/llms-full.txt): Complete company overview, service areas, and FAQs.
+- [Official Website](https://scrapwala.vercel.app/): Main portal and quote request interface.
